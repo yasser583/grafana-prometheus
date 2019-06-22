@@ -4,6 +4,7 @@ services:
     image: yasser583/goapp:ultima
     container_name: 'goapp'
     network_mode: host
+    restart: always
 
   prometheus:
     image: prom/prometheus
@@ -15,6 +16,7 @@ services:
       - ./prometheus/:/etc/prometheus/
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
+    restart: always
 
   grafana:
     image: grafana/grafana
